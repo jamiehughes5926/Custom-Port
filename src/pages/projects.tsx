@@ -2,10 +2,8 @@ import Head from "next/head";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import Container from "../components/Container";
 import { Text, useColorMode, Heading, Flex, Stack } from "@chakra-ui/react";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import TypeWriter from "../components/typewriter";
 
-export default function Index() {
+export default function Projects() {
   const { colorMode } = useColorMode();
   const colorSecondary = {
     light: "gray.700",
@@ -32,13 +30,7 @@ export default function Index() {
           alignItems="flex-start"
           maxWidth="700px"
         >
-          <Heading mb={2}>Hi, im Jamie Hughes</Heading>
-          <Text mb={0} color={colorSecondary[colorMode]}>
-            Front End Dev ( Artist / Developer / Designer )
-          </Text>
-          <Heading as="u" fontSize={32} mt={20} mb={2}>
-            Work
-          </Heading>
+          <Heading mb={2}>Projects</Heading>
           <Text color={colorSecondary[colorMode]}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
             aspernatur, laudantium ad at illum iusto voluptas dicta unde
