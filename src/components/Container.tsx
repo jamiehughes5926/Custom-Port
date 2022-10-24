@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { motion } from "framer-motion";
 import TypeWriter from "./typewriter";
+import { Footer } from "./Footer";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
