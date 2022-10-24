@@ -8,7 +8,7 @@ import theme from "../theme";
 import customTheme from "../theme";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import "../styles/loader.css";
+import { AnimatePresence } from "framer-motion";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -51,7 +51,13 @@ function MyApp({ Component, pageProps }) {
         }}
       >
         <GlobalStyle>
-          <Component {...pageProps} />
+          <AnimatePresence
+            exitBeforeEnter
+            initial={true}
+            onExitComplete={() => window.scrollTo(0, 0)}
+          >
+            <Component {...pageProps} />
+          </AnimatePresence>
         </GlobalStyle>
       </ColorModeProvider>
     </ChakraProvider>

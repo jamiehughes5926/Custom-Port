@@ -4,8 +4,13 @@ import NextLink from "next/link";
 import styled from "@emotion/styled";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { motion } from "framer-motion";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
 import TypeWriter from "./typewriter";
+
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+};
 
 const Container = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -83,6 +88,7 @@ const Container = ({ children }) => {
             </Button>
           </NextLink>
         </Box>
+
         <DarkModeSwitch />
       </StickyNav>
       <Flex
@@ -104,7 +110,15 @@ const Container = ({ children }) => {
         px={[0, 4, 4]}
         mt={[4, 8, 8]}
       >
-        {children}
+        <motion.div
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          variants={variants}
+          transition={{ type: "linear" }}
+        >
+          {children}
+        </motion.div>
       </Flex>
     </>
   );
