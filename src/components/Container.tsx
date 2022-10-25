@@ -1,11 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
+import React, { useRef, useState, useEffect } from "react";
+import emailjs from "emailjs-com";
+import {
+  useColorMode,
+  Button,
+  Flex,
+  Box,
+  ChakraProvider,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  Input,
+  ModalFooter,
+  useDisclosure,
+  Textarea,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import styled from "@emotion/styled";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { motion } from "framer-motion";
 import TypeWriter from "./typewriter";
-import { Footer } from "./Footer";
+import { useForm } from "react-hook-form";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -37,6 +57,31 @@ const Container = ({ children }) => {
     backdrop-filter: saturate(180%) blur(20px);
     transition: height 0.5s, line-height 0.5s;
   `;
+
+  const { isOpen, onClose, onOpen } = useDisclosure();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const form = useRef();
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("gmail", "template_nroy3th", e.target, "HDqc3mVc7fTUcQvx_")
+      .then(
+        (result) => {
+          console.log(result.text);
+          onClose();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
 
   return (
     <>
@@ -88,6 +133,57 @@ const Container = ({ children }) => {
               Projects
             </Button>
           </NextLink>
+
+          <Button
+            onClick={onOpen}
+            as="a"
+            variant="ghost"
+            p={[1, 2, 4]}
+            _hover={{ backgroundColor: navHoverBg[colorMode] }}
+          >
+            Contact Me
+          </Button>
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>
+                <ModalCloseButton />
+              </ModalHeader>
+              <ModalBody>
+                <form onSubmit={sendEmail}>
+                  <FormControl>
+                    <FormLabel> Contact Me</FormLabel>
+
+                    <Input type="text" placeholder="Name" name="name" />
+
+                    <Input
+                      mt="1"
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                    />
+                    <Textarea
+                      mt="1"
+                      placeholder="Your Message"
+                      name="message"
+                    />
+                    <FormHelperText>
+                      I'll try to respond as quickly as possible
+                    </FormHelperText>
+                  </FormControl>
+                  <Button
+                    justifyContent="flex-end"
+                    mt="5"
+                    id="submit"
+                    type="submit"
+                  >
+                    Submit
+                  </Button>
+                </form>
+              </ModalBody>
+              <ModalFooter></ModalFooter>
+            </ModalContent>
+          </Modal>
         </Box>
 
         <DarkModeSwitch />
