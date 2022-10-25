@@ -13,6 +13,7 @@ import {
   FormHelperText,
   Input,
   Box,
+  Highlight,
 } from "@chakra-ui/react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import TypeWriter from "../components/typewriter";
@@ -44,28 +45,31 @@ export default function Index() {
           alignItems="flex-start"
           maxWidth="700px"
         >
-          <Heading mb={2}>Hi, im Jamie Hughes</Heading>
-          <Text mb={0} color={colorSecondary[colorMode]}>
-            Front End Dev ( Developer / Designer )
+          <Heading mb={0}>
+            Hi, im <Text color="#34e4ea">Jamie Hughes</Text>
+          </Heading>
+          <Text mb={-10} color={colorSecondary[colorMode]}>
+            Full Stack Developer ( Developer / Designer )
           </Text>
 
           <Heading as="u" fontSize={32} mt={20} mb={2}>
-            Work
+            About
           </Heading>
           <Text color={colorSecondary[colorMode]}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            aspernatur, laudantium ad at illum iusto voluptas dicta unde
-            tempora, impedit a vel dolorem est quo possimus iste nesciunt!
-            Alias, placeat!
+            I am a Full Stack developer currently in my final year for my
+            Bachelors of Science majoring in Computer Science.
           </Text>
           <Heading as="u" fontSize={32} mt={20} mb={2}>
-            Skills
+            Technologies
           </Heading>
           <Text color={colorSecondary[colorMode]}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            aspernatur, laudantium ad at illum iusto voluptas dicta unde
-            tempora, impedit a vel dolorem est quo possimus iste nesciunt!
-            Alias, placeat!
+            <Flex
+              pt="10"
+              h="345px"
+              w={{ base: "400px", md: "700px" }}
+              flexDirection="row"
+              justifyContent="center"
+            ></Flex>
           </Text>
         </Flex>
       </Stack>

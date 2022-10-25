@@ -3,7 +3,7 @@ import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import Container from "../components/Container";
 import { Text, useColorMode, Heading, Flex, Stack } from "@chakra-ui/react";
 
-export default function About() {
+export default function resume() {
   const { colorMode } = useColorMode();
   const colorSecondary = {
     light: "gray.700",
@@ -30,12 +30,9 @@ export default function About() {
           alignItems="flex-start"
           maxWidth="700px"
         >
-          <Heading mb={2}>About Section</Heading>
+          <Heading mb={2}>Resume</Heading>
           <Text color={colorSecondary[colorMode]}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            aspernatur, laudantium ad at illum iusto voluptas dicta unde
-            tempora, impedit a vel dolorem est quo possimus iste nesciunt!
-            Alias, placeat!
+            Here is a copy of my resume
           </Text>
         </Flex>
       </Stack>

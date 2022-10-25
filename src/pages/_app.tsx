@@ -9,6 +9,7 @@ import customTheme from "../theme";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import React from "react";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -42,6 +43,11 @@ const GlobalStyle = ({ children }) => {
   );
 };
 function MyApp({ Component, pageProps }) {
+  const [pageLoaded, setPageLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    setPageLoaded(true);
+  }, []);
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <ColorModeProvider
@@ -56,7 +62,7 @@ function MyApp({ Component, pageProps }) {
             initial={true}
             onExitComplete={() => window.scrollTo(0, 0)}
           >
-            <Component {...pageProps} />
+            {pageLoaded ? <Component {...pageProps} /> : null}
           </AnimatePresence>
         </GlobalStyle>
       </ColorModeProvider>

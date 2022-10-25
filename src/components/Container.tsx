@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import emailjs from "emailjs-com";
+
+import emailjs from "@emailjs/browser";
 import {
   useColorMode,
   Button,
@@ -112,14 +113,14 @@ const Container = ({ children }) => {
             </Button>
           </NextLink>
 
-          <NextLink href="/about" passHref>
+          <NextLink href="/resume" passHref>
             <Button
               as="a"
               variant="ghost"
               p={[1, 2, 4]}
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
-              About
+              Resume
             </Button>
           </NextLink>
 
@@ -143,6 +144,7 @@ const Container = ({ children }) => {
           >
             Contact Me
           </Button>
+
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
