@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import TypeWriter from "../components/typewriter";
-import { Label } from "@material-ui/icons";
 
 export default function Index() {
   const { colorMode } = useColorMode();
