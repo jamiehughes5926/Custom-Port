@@ -235,7 +235,7 @@ const Container = ({ children }) => {
         <Flex></Flex>
         <Flex flexDir="column">
           <DarkModeSwitch />
-          <NextLink href="/" passHref>
+          <NextLink href="/">
             <Button
               as="a"
               variant="ghost"
@@ -245,7 +245,7 @@ const Container = ({ children }) => {
               Home
             </Button>
           </NextLink>
-          <NextLink href="/" passHref>
+          <NextLink href="/resume">
             <Button
               as="a"
               variant="ghost"
@@ -255,7 +255,7 @@ const Container = ({ children }) => {
               Resume
             </Button>
           </NextLink>
-          <NextLink href="/" passHref>
+          <NextLink href="/projects">
             <Button
               as="a"
               variant="ghost"

@@ -50,10 +50,10 @@ export default function Projects() {
           </Text>
         </Flex>
       </Stack>
-      <SimpleGrid columns={[1, 2, 1]} gap={100}>
+      <SimpleGrid columns={[1, 2, 1]} gap={1}>
         <Section>
           <WorkGridItem id="2048" title="2048 Clone" thumbnail={twenty}>
-            I created a working clone of the popular game 2048 using React
+            {}
           </WorkGridItem>
         </Section>
         <Section>
@@ -62,7 +62,7 @@ export default function Projects() {
             title="Full Stack Social Media"
             thumbnail={social}
           >
-            I created a full stack social Media application
+            {}
           </WorkGridItem>
         </Section>
       </SimpleGrid>
