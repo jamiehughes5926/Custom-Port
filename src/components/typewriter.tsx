@@ -12,7 +12,7 @@ export default function TypeWriter({}: Props) {
   });
   return (
     <div>
-      <Text fontSize={{ xs: "4xl", sm: "5xl", md: "6xl", xl: "7xl" }}>
+      <Text fontSize={{ xs: "5xl", sm: "5xl", md: "6xl", xl: "7xl" }}>
         {text}
         <Cursor cursorColor="#F7AB01" />
       </Text>

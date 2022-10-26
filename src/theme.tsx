@@ -5,8 +5,8 @@ const fonts = { mono: `'Menlo', monospace` };
 
 const breakpoints = {
   xs: "30em",
-  sm: "40em",
-  md: "55em",
+  sm: "50em",
+  md: "52em",
   lg: "64em",
 };
 

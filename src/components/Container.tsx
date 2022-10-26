@@ -216,6 +216,7 @@ const Container = ({ children }) => {
       <IconButton
         aria-label="Open Menu"
         size="lg"
+        w="auto"
         mr="2"
         icon={<HamburgerIcon />}
         display={["flex", "flex", "none", "none"]}
