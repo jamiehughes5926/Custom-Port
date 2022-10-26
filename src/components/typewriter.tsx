@@ -6,7 +6,7 @@ type Props = {};
 
 export default function TypeWriter({}: Props) {
   const [text, count] = useTypewriter({
-    words: ["Jamie Hughes", "<h1> Jamie <h1/>"],
+    words: ["Jamie Hughes", "<h1>Jamie<h1/>"],
     loop: true,
     delaySpeed: 2000,
   });
