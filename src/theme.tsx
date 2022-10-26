@@ -20,7 +20,7 @@ const override = {
     large: 700,
   },
   fontSizes: {
-    xs: "12px",
+    xs: "10px",
     sm: "14px",
     md: "16px",
     lg: "18px",
