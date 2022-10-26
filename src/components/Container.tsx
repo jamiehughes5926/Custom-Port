@@ -216,7 +216,7 @@ const Container = ({ children }) => {
       <IconButton
         aria-label="Open Menu"
         size="lg"
-        w="auto"
+        w="105vw"
         icon={<HamburgerIcon />}
         display={["flex", "flex", "none", "none"]}
         onClick={() => changeDisplay("flex")}
@@ -232,8 +232,7 @@ const Container = ({ children }) => {
         h="100vh"
         display={display}
       >
-        <Flex></Flex>
-        <Flex flexDir="column">
+        <Flex flexDir="column" w="105vw">
           <DarkModeSwitch />
           <NextLink href="/">
             <Button
