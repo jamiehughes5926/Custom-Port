@@ -224,7 +224,7 @@ const Container = ({ children }) => {
 
       <Flex
         flexDir="column"
-        w="100vw"
+        w="105vw"
         bg={bgColor[colorMode]}
         zIndex={20}
         top="0"
