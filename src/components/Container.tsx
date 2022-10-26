@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
+import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
 
 import emailjs from "@emailjs/browser";
 import {
@@ -95,9 +97,9 @@ const Container = ({ children }) => {
         width="100%"
         bg={bgColor[colorMode]}
         as="nav"
-        p={[2, 6, 8]}
+        p={[2, 6, 0]}
         py={2}
-        mt={8}
+        mt={5}
         mb={[0, 0, 8]}
         mx="auto"
       >
@@ -187,7 +189,14 @@ const Container = ({ children }) => {
             </ModalContent>
           </Modal>
         </Box>
-
+        <Flex mr={200}></Flex>
+        <Link
+          href="https://www.github.com/jamiehughes5926"
+          target="_blank"
+          passHref
+        >
+          <BsGithub size="4%" />
+        </Link>
         <DarkModeSwitch />
       </StickyNav>
       <Flex

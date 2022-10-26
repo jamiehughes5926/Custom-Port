@@ -1,6 +1,9 @@
 import Head from "next/head";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import Container from "../components/Container";
+import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
+
 import {
   Text,
   useColorMode,
@@ -13,16 +16,24 @@ import {
   FormHelperText,
   Input,
   Box,
+  SimpleGrid,
   Highlight,
+  VStack,
+  StackDivider,
+  List,
+  ListIcon,
+  ListItem,
+  HStack,
 } from "@chakra-ui/react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import TypeWriter from "../components/typewriter";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 
 export default function Index() {
   const { colorMode } = useColorMode();
   const colorSecondary = {
-    light: "gray.700",
-    dark: "gray.400",
+    light: "black.700",
+    dark: "black.400",
   };
 
   return (
@@ -46,31 +57,105 @@ export default function Index() {
           maxWidth="700px"
         >
           <Heading mb={0}>
-            Hi, im <Text color="#34e4ea">Jamie Hughes</Text>
+            Hi, i'm <Text color="#34e4ea">Jamie Hughes</Text>
           </Heading>
-          <Text mb={-10} color={colorSecondary[colorMode]}>
+          <Text mb={5} color={colorSecondary[colorMode]}>
             Full Stack Developer ( Developer / Designer )
           </Text>
 
-          <Heading as="u" fontSize={32} mt={20} mb={2}>
+          <Heading as="u" fontSize={32} mt={7} mb={0}>
             About
           </Heading>
-          <Text color={colorSecondary[colorMode]}>
+          <Text color={colorSecondary[colorMode]} mb="0">
             I am a Full Stack developer currently in my final year for my
             Bachelors of Science majoring in Computer Science.
           </Text>
-          <Heading as="u" fontSize={32} mt={20} mb={2}>
-            Technologies
+          <Heading as="u" fontSize={32} mt={12} mb={4}>
+            My skills
           </Heading>
-          <Text color={colorSecondary[colorMode]}>
-            <Flex
-              pt="10"
-              h="345px"
-              w={{ base: "400px", md: "700px" }}
-              flexDirection="row"
-              justifyContent="center"
-            ></Flex>
-          </Text>
+
+          <HStack spacing="12px">
+            <Box w="220px" h="200px">
+              <Heading as="u" fontSize={18} mt={4} mb={2}>
+                Front-End
+              </Heading>
+              <List spacing={3}>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  HTML/CSS
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Javascript
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  React JS
+                </ListItem>
+                {/* You can also use custom icons from react-icons */}
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Next JS
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Typescript{" "}
+                </ListItem>
+              </List>
+            </Box>
+            <Box w="220px" h="200px">
+              <Heading as="u" fontSize={18} mt={4} mb={2}>
+                Back-End
+              </Heading>
+              <List spacing={3}>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Node JS
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  C++
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Firebase
+                </ListItem>
+                {/* You can also use custom icons from react-icons */}
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Headless CMS
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Mongo DB
+                </ListItem>
+              </List>
+            </Box>
+            <Box w="220px" h="200px">
+              <Heading as="u" fontSize={18} mt={4} mb={2}>
+                Tools{" "}
+              </Heading>
+              <List spacing={3}>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Github{" "}
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  Figma
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  NPM
+                </ListItem>
+                {/* You can also use custom icons from react-icons */}
+                <ListItem>
+                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                  WebFlow
+                </ListItem>
+              </List>
+            </Box>
+          </HStack>
         </Flex>
       </Stack>
     </Container>
