@@ -66,7 +66,7 @@ export default function Index() {
           <Heading as="u" fontSize={32} mt={7} mb={0}>
             About
           </Heading>
-          <Text color={colorSecondary[colorMode]} mb="0">
+          <Text color={colorSecondary[colorMode]} m="auto">
             I am a Full Stack developer currently in my final year for my
             Bachelors of Science majoring in Computer Science.
           </Text>
