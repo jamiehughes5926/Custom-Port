@@ -4,7 +4,7 @@ import { theme as chakraTheme } from "@chakra-ui/react";
 const fonts = { mono: `'Menlo', monospace` };
 
 const breakpoints = {
-  xs: "30em",
+  xs: "15em",
   sm: "50em",
   md: "52em",
   lg: "64em",
