@@ -13,6 +13,8 @@ import {
 import { WorkGridItem } from "../components/griditem";
 import Section from "../components/section";
 import thumbInkdrop from "../inkdrop_01.png";
+import twenty from "../2048.png";
+import social from "../social.jpeg";
 
 export default function Projects() {
   const { colorMode } = useColorMode();
@@ -50,31 +52,17 @@ export default function Projects() {
       </Stack>
       <SimpleGrid columns={[1, 2, 1]} gap={100}>
         <Section>
-          <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+          <WorkGridItem id="2048" title="2048 Clone" thumbnail={twenty}>
+            I created a working clone of the popular game 2048 using React
           </WorkGridItem>
         </Section>
         <Section>
-          <WorkGridItem id="walknote" title="walknote" thumbnail={thumbInkdrop}>
-            Music recommendation app for iOS
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.1}>
           <WorkGridItem
-            id="fourpainters"
-            title="The four painters"
-            thumbnail={thumbInkdrop}
+            id="Social"
+            title="Full Stack Social Media"
+            thumbnail={social}
           >
-            A video work generated with deep learning, imitating famous four
-            painters like Van Gogh
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.1}>
-          <WorkGridItem id="menkiki" thumbnail={thumbInkdrop} title="Menkiki">
-            An app that suggests ramen(noodle) shops based on a given photo of
-            the ramen you want to eat
+            I created a full stack social Media application
           </WorkGridItem>
         </Section>
       </SimpleGrid>

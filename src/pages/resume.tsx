@@ -2,10 +2,10 @@ import Head from "next/head";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import Container from "../components/Container";
 import { Text, useColorMode, Heading, Flex, Stack } from "@chakra-ui/react";
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
 import React from "react";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default function resume() {
   const { colorMode } = useColorMode();
@@ -13,12 +13,6 @@ export default function resume() {
     light: "gray.700",
     dark: "gray.400",
   };
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
 
   return (
     <Container>
@@ -41,9 +35,9 @@ export default function resume() {
           maxWidth="700px"
         >
           <Heading mb={2}>Resume</Heading>
-          <Text color={colorSecondary[colorMode]}>
-            Here is a copy of my resume
-          </Text>
+          <Link href="/">
+            <Text color={colorSecondary[colorMode]}>Here is a copy</Text>
+          </Link>
         </Flex>
       </Stack>
     </Container>

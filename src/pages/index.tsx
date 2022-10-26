@@ -75,7 +75,10 @@ export default function Index() {
           </Heading>
 
           <HStack spacing="12px">
-            <Box w="220px" h="200px">
+            <Box
+              w={{ xs: "120px", sm: "170px", md: "190px", lg: "220px" }}
+              h="200px"
+            >
               <Heading as="u" fontSize={18} mt={4} mb={2}>
                 Front-End
               </Heading>
@@ -103,7 +106,10 @@ export default function Index() {
                 </ListItem>
               </List>
             </Box>
-            <Box w="220px" h="200px">
+            <Box
+              w={{ xs: "120px", sm: "170px", md: "190px", lg: "220px" }}
+              h="200px"
+            >
               <Heading as="u" fontSize={18} mt={4} mb={2}>
                 Back-End
               </Heading>
@@ -123,7 +129,7 @@ export default function Index() {
                 {/* You can also use custom icons from react-icons */}
                 <ListItem>
                   <ListIcon as={CheckCircleIcon} color="green.500" />
-                  Headless CMS
+                  Sanity IO
                 </ListItem>
                 <ListItem>
                   <ListIcon as={CheckCircleIcon} color="green.500" />
@@ -131,7 +137,10 @@ export default function Index() {
                 </ListItem>
               </List>
             </Box>
-            <Box w="220px" h="200px">
+            <Box
+              w={{ xs: "120px", sm: "170px", md: "190px", lg: "220px" }}
+              h="200px"
+            >
               <Heading as="u" fontSize={18} mt={4} mb={2}>
                 Tools{" "}
               </Heading>

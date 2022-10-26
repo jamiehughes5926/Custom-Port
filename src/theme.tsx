@@ -4,10 +4,10 @@ import { theme as chakraTheme } from "@chakra-ui/react";
 const fonts = { mono: `'Menlo', monospace` };
 
 const breakpoints = {
+  xs: "30em",
   sm: "40em",
-  md: "52em",
+  md: "55em",
   lg: "64em",
-  xl: "80em",
 };
 
 const override = {

@@ -22,6 +22,8 @@ import {
   ModalFooter,
   useDisclosure,
   Textarea,
+  IconButton,
+  Icon,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import styled from "@emotion/styled";
@@ -29,6 +31,7 @@ import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { motion } from "framer-motion";
 import TypeWriter from "./typewriter";
 import { useForm } from "react-hook-form";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -69,6 +72,8 @@ const Container = ({ children }) => {
     reset,
   } = useForm();
 
+  const [display, changeDisplay] = useState("none");
+
   const form = useRef();
   function sendEmail(e) {
     e.preventDefault();
@@ -102,6 +107,7 @@ const Container = ({ children }) => {
         mt={5}
         mb={[0, 0, 8]}
         mx="auto"
+        display={["none", "none", "flex", "flex"]}
       >
         <Box>
           <NextLink href="/" passHref>
@@ -197,8 +203,124 @@ const Container = ({ children }) => {
         >
           <BsGithub size="4%" />
         </Link>
+
         <DarkModeSwitch />
       </StickyNav>
+
+      {/*  */}
+      {/* 
+      /
+      //  */}
+      {/*  */}
+      {/*  */}
+      <IconButton
+        aria-label="Open Menu"
+        size="lg"
+        mr="2"
+        icon={<HamburgerIcon />}
+        display={["flex", "flex", "none", "none"]}
+        onClick={() => changeDisplay("flex")}
+      />
+
+      <Flex
+        flexDir="column"
+        w="100vw"
+        bg={bgColor[colorMode]}
+        zIndex={20}
+        top="0"
+        left="0"
+        h="100vh"
+        display={display}
+      >
+        <Flex></Flex>
+        <Flex flexDir="column">
+          <DarkModeSwitch />
+          <NextLink href="/" passHref>
+            <Button
+              as="a"
+              variant="ghost"
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
+              Home
+            </Button>
+          </NextLink>
+          <NextLink href="/" passHref>
+            <Button
+              as="a"
+              variant="ghost"
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
+              Resume
+            </Button>
+          </NextLink>
+          <NextLink href="/" passHref>
+            <Button
+              as="a"
+              variant="ghost"
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
+              Projects
+            </Button>
+          </NextLink>
+          <Link href={""}>
+            <Button
+              as="a"
+              variant="ghost"
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              onClick={onOpen}
+            >
+              Contact
+            </Button>
+          </Link>
+
+          <IconButton
+            aria-label="close"
+            size="lg"
+            mt={2}
+            mr={2}
+            icon={<CloseIcon />}
+            bg={bgColor[colorMode]}
+            onClick={() => changeDisplay("none")}
+          />
+        </Flex>
+      </Flex>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>
+            <ModalCloseButton />
+          </ModalHeader>
+          <ModalBody>
+            <form onSubmit={sendEmail}>
+              <FormControl>
+                <FormLabel> Contact Me</FormLabel>
+
+                <Input type="text" placeholder="Name" name="name" />
+
+                <Input mt="1" type="email" placeholder="Email" name="email" />
+                <Textarea mt="1" placeholder="Your Message" name="message" />
+                <FormHelperText>
+                  I'll try to respond as quickly as possible
+                </FormHelperText>
+              </FormControl>
+              <Button
+                justifyContent="flex-end"
+                mt="5"
+                id="submit"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </form>
+          </ModalBody>
+          <ModalFooter></ModalFooter>
+        </ModalContent>
+      </Modal>
+
       <Flex
         justifyContent="center"
         flexDirection="row"
