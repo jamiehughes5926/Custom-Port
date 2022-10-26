@@ -280,8 +280,6 @@ const Container = ({ children }) => {
           <IconButton
             aria-label="close"
             size="lg"
-            mt={2}
-            mr={2}
             icon={<CloseIcon />}
             bg={bgColor[colorMode]}
             onClick={() => changeDisplay("none")}
