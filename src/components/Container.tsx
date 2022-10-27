@@ -47,8 +47,8 @@ const Container = ({ children }) => {
   };
 
   const navHoverBg = {
-    light: "gray.600",
-    dark: "gray.300",
+    light: "white",
+    dark: "#171717",
   };
 
   const color = {
@@ -206,6 +206,14 @@ const Container = ({ children }) => {
 
         <DarkModeSwitch />
       </StickyNav>
+      <IconButton
+        aria-label="Open Menu"
+        size="lg"
+        w="100%"
+        icon={<HamburgerIcon />}
+        display={["flex", "flex", "none", "none"]}
+        onClick={() => changeDisplay("flex")}
+      />
 
       {/*  */}
       {/* 
@@ -213,18 +221,10 @@ const Container = ({ children }) => {
       //  */}
       {/*  */}
       {/*  */}
-      <IconButton
-        aria-label="Open Menu"
-        size="lg"
-        w="105vw"
-        icon={<HamburgerIcon />}
-        display={["flex", "flex", "none", "none"]}
-        onClick={() => changeDisplay("flex")}
-      />
 
       <Flex
         flexDir="column"
-        w="105vw"
+        w="100%"
         bg={bgColor[colorMode]}
         zIndex={20}
         top="0"
@@ -232,8 +232,9 @@ const Container = ({ children }) => {
         h="100vh"
         display={display}
       >
-        <Flex flexDir="column" w="105vw">
+        <Flex flexDir="column" w="100%">
           <DarkModeSwitch />
+
           <NextLink href="/">
             <Button
               as="a"

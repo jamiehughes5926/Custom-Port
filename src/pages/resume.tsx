@@ -1,11 +1,22 @@
 import Head from "next/head";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import Container from "../components/Container";
-import { Text, useColorMode, Heading, Flex, Stack } from "@chakra-ui/react";
+import {
+  Text,
+  useColorMode,
+  Heading,
+  Flex,
+  Stack,
+  Box,
+  Button,
+} from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Resume from "./resume.png";
+import Image from "next/image";
 
 import React from "react";
+import { Footer } from "../components/Footer";
 
 export default function resume() {
   const { colorMode } = useColorMode();
@@ -28,18 +39,24 @@ export default function resume() {
         maxWidth="700px"
         px="2"
       >
+        <Heading mb="0" pb="0">
+          Resume
+        </Heading>
+        <Link href="https://drive.google.com/uc?export=download&id=1E3lM7DvPl8M0ZaFYsueEjgBdC1PsRoLZ">
+          <Button>Download</Button>
+        </Link>
         <Flex
           flexDirection="column"
           justifyContent="flex-start"
           alignItems="flex-start"
           maxWidth="700px"
         >
-          <Heading mb={2}>Resume</Heading>
-          <Link href="/">
-            <Text color={colorSecondary[colorMode]}>Here is a copy</Text>
-          </Link>
+          <Box boxSize="sm">
+            <Image src={Resume}></Image>{" "}
+          </Box>
         </Flex>
       </Stack>
+      <Footer />
     </Container>
   );
 }
