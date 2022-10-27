@@ -34,7 +34,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="https://bank-landing-page-alpha.vercel.app/" passHref>
+          <Link href="https://bank-landing-page-alpha.vercel.app/" >
             Vercel Link <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -44,7 +44,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Github</Meta>
-          <Link href="https://github.com/jamiehughes5926/Bank-LandingPage" passHref>
+          <Link href="https://github.com/jamiehughes5926/Bank-LandingPage" >
            <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
