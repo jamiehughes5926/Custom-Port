@@ -34,7 +34,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="https://2048-clone-lmeq.vercel.app/" passHref>
+          <Link href="/" >
             Vercel Link <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
