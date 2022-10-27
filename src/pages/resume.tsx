@@ -42,8 +42,11 @@ export default function resume() {
         <Heading mb="0" pb="0">
           Resume
         </Heading>
+        <Text> Click the image to download</Text>
         <Link href="https://drive.google.com/uc?export=download&id=1E3lM7DvPl8M0ZaFYsueEjgBdC1PsRoLZ">
-          <Button>Download</Button>
+        <Box boxSize="sm">
+            <Image src={Resume}></Image>
+          </Box>
         </Link>
         <Flex
           flexDirection="column"
@@ -51,9 +54,7 @@ export default function resume() {
           alignItems="flex-start"
           maxWidth="700px"
         >
-          <Box boxSize="sm">
-            <Image src={Resume}></Image>{" "}
-          </Box>
+        
         </Flex>
       </Stack>
       <Footer />

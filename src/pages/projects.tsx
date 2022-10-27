@@ -15,6 +15,7 @@ import Section from "../components/section";
 import thumbInkdrop from "../inkdrop_01.png";
 import twenty from "../2048.png";
 import social from "../social.jpeg";
+import landing from "../Bank.png"
 
 export default function Projects() {
   const { colorMode } = useColorMode();
@@ -51,6 +52,15 @@ export default function Projects() {
         </Flex>
       </Stack>
       <SimpleGrid columns={[1, 2, 1]} gap={1}>
+      <Section>
+          <WorkGridItem
+            id="LandingPage"
+            title="Bank Landing Page"
+            thumbnail={landing}
+          >
+            {}
+          </WorkGridItem>
+        </Section>
         <Section>
           <WorkGridItem id="2048" title="2048 Clone" thumbnail={twenty}>
             {}
@@ -65,6 +75,7 @@ export default function Projects() {
             {}
           </WorkGridItem>
         </Section>
+       
       </SimpleGrid>
     </Container>
   );
