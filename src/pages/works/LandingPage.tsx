@@ -16,7 +16,7 @@ import Image from "next/image";
 import twenty from "../works/2048.png";
 import landing from "../works/Bank.png"
 const Work = () => (
-  <Layout title="Social">
+  <Layout title="Landing page">
     <Flex
       justifyContent="center"
       flexDirection="row"
@@ -34,7 +34,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="/">
+          <Link href="https://bank-landing-page-alpha.vercel.app/" passHref>
             Vercel Link <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

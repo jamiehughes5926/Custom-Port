@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { WorkGridItem } from "../components/griditem";
 import Section from "../components/section";
-import thumbInkdrop from "../inkdrop_01.png";
 import twenty from "../2048.png";
 import social from "../social.jpeg";
 import landing from "../Bank.png"

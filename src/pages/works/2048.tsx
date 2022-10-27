@@ -16,7 +16,7 @@ import Image from "next/image";
 import twenty from "../works/2048.png";
 
 const Work = () => (
-  <Layout title="Inkdrop">
+  <Layout title="2048">
     <Flex
       justifyContent="center"
       flexDirection="row"
@@ -34,7 +34,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="/">
+          <Link href="https://2048-clone-lmeq.vercel.app/" passHref>
             Vercel Link <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
