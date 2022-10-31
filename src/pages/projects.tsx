@@ -14,7 +14,8 @@ import { WorkGridItem } from "../components/griditem";
 import Section from "../components/section";
 import twenty from "../2048.png";
 import social from "../social.jpeg";
-import landing from "../Bank.png"
+import landing from "../Bank.png";
+import agency from "../nxt-agency.png";
 
 export default function Projects() {
   const { colorMode } = useColorMode();
@@ -51,7 +52,16 @@ export default function Projects() {
         </Flex>
       </Stack>
       <SimpleGrid columns={[1, 2, 1]} gap={1}>
-      <Section>
+        <Section>
+          <WorkGridItem
+            id="AgencyLanding"
+            title="Next Agency landing page"
+            thumbnail={agency}
+          >
+            {}
+          </WorkGridItem>
+        </Section>
+        <Section>
           <WorkGridItem
             id="LandingPage"
             title="Bank Landing Page"
@@ -74,7 +84,6 @@ export default function Projects() {
             {}
           </WorkGridItem>
         </Section>
-       
       </SimpleGrid>
     </Container>
   );
